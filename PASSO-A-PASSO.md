@@ -299,8 +299,35 @@ Abra o endereço que aparecer no terminal (normalmente `http://localhost:5173`).
 
 > **Dica para ver o "Carregando..." com calma:** aperte `F12`, vá na aba **Network (Rede)**, troque "No throttling" por **Slow 3G** e recarregue a página. Para testar a mensagem de erro, marque **Offline** no mesmo lugar e recarregue.
 
+## Como rodar o projeto baixado do GitHub
+
+A pasta `node_modules` não vai para o GitHub, então depois de baixar o projeto é preciso instalar as dependências uma vez.
+
+**1. Baixe o repositório.** Pode ser pelo botão verde **Code > Download ZIP** no GitHub (depois extraia o .zip) ou pelo terminal:
+
+```
+git clone https://github.com/CLAUDINEIAOLIVEIRA/P1-Web2-exe3
+```
+
+**2. Entre na pasta do projeto.** 
+
+```
+cd P1-Web2-exe3
+```
+
+**3. Instale as dependências e rode.**
+
+```
+npm install
+npm run dev
+```
+
+Abra `http://localhost:5173` no navegador.
+
 ## Problemas comuns
 
+- **Erro `Não foi possível encontrar um parâmetro posicional que aceite o argumento` ao usar `cd`**: o nome da pasta tem espaço (por exemplo, `Exercicio 1`). Coloque o caminho entre aspas: `cd "Exercicio 1"`. Outra forma é digitar o começo do nome e apertar **Tab**, que o terminal completa e coloca as aspas sozinho.
+- **Erro `Não é possível localizar o caminho ... porque ele não existe` ao usar `cd`**: o terminal está em outra pasta. Veja o caminho que aparece antes do `>` no terminal. Para subir uma pasta, use `cd ..`.
 - **O contador mostra `05`, `055`...**: faltou o `Number()` no `onChange` do select.
 - **O fetch fica rodando sem parar**: faltou o `[]` no final do `useEffect`.
 - **Aviso no console `Each child in a list should have a unique "key" prop`**: faltou `key={usuario.id}` no `<li>`.
